@@ -57,9 +57,15 @@
                                 <div>{{ $task->name }}</div>
                             </td>
 
+
+                                <!-- 刪除按鈕 -->
                             <td>
-                                <!-- 代辦：刪除按鈕 -->
-                                
+                                <form action="/task/{{ $task->id }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+
+                                    <button type="submit" class="btn btn-danger">刪除任務</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
